@@ -13,5 +13,3 @@ public class FrontTest extends TestBase {
         driver.get(props.getProperty("baseUrl"));
     }
 }
-
-//+ "/" + props.getProperty("lang")
