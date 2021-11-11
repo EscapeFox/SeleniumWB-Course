@@ -1,1 +1,1 @@
-# SeleniumWB-Course
+# SeleniumWD-Course
