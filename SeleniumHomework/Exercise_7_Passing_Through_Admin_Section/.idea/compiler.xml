@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Exercise_7_Passing_Through_Admin_Section_and_Ex_8_Stickers" />
+        <module name="Exercise_7_Passing_Through_Admin_Section" />
         <module name="Exercise_2_Login_Scenario" />
         <module name="Exercise_1_Infrastracture_Preparation" />
         <module name="Exercise_1_Infrastructure_Preparation" />

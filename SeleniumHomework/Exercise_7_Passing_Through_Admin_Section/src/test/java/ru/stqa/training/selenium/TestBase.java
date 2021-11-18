@@ -21,17 +21,23 @@ public class TestBase {
 
     @Before
     public void initializeWebDriver() throws IOException{
+        if(driver != null)
+            return;
+
         props = new Properties();
         props.load(TestBase.class.getResourceAsStream("/test.properties"));
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        wait = new WebDriverWait(driver, 10);
+        //wait = new WebDriverWait(driver, 10);
+
+        Runtime.getRuntime().addShutdownHook(
+                new Thread(() -> { driver.quit(); driver = null; }));
     }
 
     @After
     public void closeWebDriverSession(){
-        driver.quit();
-        driver = null;
+//        driver.quit();
+//        driver = null;
     }
 
     public boolean isElementPresent(By locator){
