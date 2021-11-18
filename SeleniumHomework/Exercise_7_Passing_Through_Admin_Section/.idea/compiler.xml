@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Exercise_7_Passing_Through_Admin_Section_and_Ex_8_Stickers" />
+        <module name="Exercise_2_Login_Scenario" />
+        <module name="Exercise_1_Infrastracture_Preparation" />
+        <module name="Exercise_1_Infrastructure_Preparation" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>
