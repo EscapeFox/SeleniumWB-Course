@@ -14,6 +14,7 @@ import java.security.Key;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Locale;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -30,7 +31,8 @@ public class FrontTest extends TestBase {
         driver.findElement(By.name("login")).click();
 
         driver.findElement(By.cssSelector("td#content a.button:last-child")).click();
-        String productName = "MyProduct";
+
+        String productName = RandomString.make(4);
         File file = new File("myFile.jpg");
 
         WebElement generalTab = driver.findElement(By.cssSelector("div#tab-general"));
@@ -68,7 +70,8 @@ public class FrontTest extends TestBase {
         purchasePrice.selectByValue("USD");
         driver.findElement(By.cssSelector("input[name='prices[USD]']")).sendKeys( "10");
         driver.findElement(By.cssSelector("button[name='save']")).click();
-        driver.findElement(By.xpath("//table[@class='dataTable']//td//a[text()='" + productName + "']"));
+
+        driver.findElements(By.xpath("//table[@class='dataTable']//td//a[text()='" + productName + "']"));
 
     }
 
@@ -93,7 +96,7 @@ public class FrontTest extends TestBase {
         Select zoneSelect = new Select(driver.findElement(By.cssSelector("select[name=zone_code]")));
         zoneSelect.selectByVisibleText("Arizona");
 
-        String email = RandomString.make(4);
+        String email = RandomString.make(4).toLowerCase();
 
         registrationForm.findElement(By.cssSelector("input[name='email']")).sendKeys(email + "@gmail.com");
         registrationForm.findElement(By.cssSelector("input[name='phone']")).sendKeys("+18003211455");
