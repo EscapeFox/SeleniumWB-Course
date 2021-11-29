@@ -20,6 +20,7 @@ public class TestBase {
     public static WebDriver driver;
     public static WebDriverWait wait;
     public static Properties props;
+    int waitTimeInSeconds = 10;
 
     @Before
     public void initializeWebDriver() throws IOException{
@@ -58,11 +59,11 @@ public class TestBase {
     // Проверка наличия(с неявными ожданиями)
     public boolean isElementPresent(By locator){
         try {
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
             return driver.findElements(locator).size() > 0;
         }
         finally {
-            driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(waitTimeInSeconds, TimeUnit.SECONDS);
         }
     }
 
