@@ -19,7 +19,7 @@ public class FrontTest extends TestBase {
 
     @Test
     public void workWithTheCart(){
-        driver.get("http://localhost/litecart/en/");
+        
         int countOfProduct = 3;
         WebElement product;
         WebElement cartQuantity;
