@@ -40,9 +40,8 @@ public class Application {
             count = 1;
 
         for(int i = 1; i <= count; i++ ){
-            cartPage.removeItem(i);
+            cartPage.removeItem();
         }
-
     }
 
     public void quit(){

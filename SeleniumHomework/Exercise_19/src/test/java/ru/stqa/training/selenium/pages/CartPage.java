@@ -34,11 +34,11 @@ public class CartPage extends Page{
         return driver.findElements(By.cssSelector("table.dataTable"));
     }
 
-    public void removeItem(int i){
+    public void removeItem(){
         int rowsCount = getTableRowsCount();
         removeCartItemButton().click();
         if(!isElementPresent(By.cssSelector("div#content em")))
-            wait.until(ExpectedConditions.numberOfElementsToBe(By.cssSelector("table.dataTable tr"), rowsCount - (i)));
+            wait.until(ExpectedConditions.numberOfElementsToBe(By.cssSelector("table.dataTable tr"), rowsCount - (1)));
     }
 
     public WebElement removeCartItemButton(){
@@ -46,6 +46,7 @@ public class CartPage extends Page{
     }
 
     public List<WebElement> shortcut(){
+        wait.until((WebDriver d) -> d.findElement(By.cssSelector("tr.footer")));
         return driver.findElements(By.cssSelector("li.shortcut a.inact"));
     }
 }
