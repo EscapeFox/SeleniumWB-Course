@@ -2,6 +2,7 @@ package ru.stqa.training.selenium.app;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import ru.stqa.training.selenium.pages.CartPage;
 import ru.stqa.training.selenium.pages.MainPage;
@@ -30,9 +31,10 @@ public class Application {
         productPage.submitAddToCart();
     }
 
-    public int getQuantity(){
-        return cartPage.getQuantity();
+    public boolean cartIsEmpty(){
+      return cartPage.cartIsEmpty();
     }
+
 
     public void removeAllProductFromCart() {
         cartPage.open();
